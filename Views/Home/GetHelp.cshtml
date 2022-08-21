@@ -1,0 +1,81 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<style>
+    .head {
+        text-align: center;
+        height: 5px;
+        font: linear-gradient(135deg, #5335cf 0%, #de005e 25%, #f66e48 50%, #de005e 75%, #5335cf 100%);
+    }
+
+    .slogan {
+        text-align: center;
+    }
+
+    .* {
+        background-image: url("https://i.pinimg.com/736x/46/0e/89/460e89249119b5d1f56bc005cc3f32c1.jpg") /*rainbow background*/
+    }
+</style>
+
+<h1 class="head"><i>Who are we?</i></h1>
+<br />
+<br />
+<h2>
+    KISMET is organisation aimed at helping LGBTQ+ teens and young adults get access to quality education and
+    mental health services.<br />There are millions of teens and young adults around the world that face discrimination
+    due to their sexual orientation and/or gender identity.These teens and young adults often miss out on once-in-a-lifetime
+    opportunities. <br />We are dedicated to reducing the impact that these situations have by connecing our <i>Kismies</i>
+    to companies,organisations and people that will help them further be able to achieve their goals.
+</h2>
+<br />
+<h3>
+    If you are a teen or young adult that is part of the LGBTQ+ community, and have been discriminated against due
+    to that, join us, and we'll help you reach your goals.
+</h3>
+
+<h3 class="slogan"><i>KISMET<br />The future is written in the stars.</i></h3>
+
+<br />
+<br />
+
+<section id="text">
+    <img style="width:42px;height:100%%;" src=" https://static.vecteezy.com/system/resources/previews/000/518/121/original/vector-man-and-woman-with-smartphones-concept-illustration-texting-messaging-chatting-social-media-customer-assistance-dating-communication.jpg" />
+    <h3 class="text">Text us anytime for more information</h3><br />
+    <button onclick="Text()">Text us here</button><br />
+    <h6>Messaging rates may apply</h6>
+</section>
+<section id="call">
+    <img style="width:42px;height:100%%;" src="https://th.bing.com/th/id/R.f051dfdaa411fcd459c313a6cb35fe0f?rik=a5UROovDb2R7xA&riu=http%3a%2f%2fwww.clipartbest.com%2fcliparts%2fKcn%2fXyb%2fKcnXybbdi.jpg&ehk=eJmD7mBpyH6Pjmu%2beIcxLLbEAAHkvCH1EvB61EfyYLY%3d&risl=&pid=ImgRaw&r=0&sres=1&sresct=1" />
+    <h3 class="call">Need to hear a friendly voice? Call us</h3><br />
+    <button onclick="Call()">Call us here</button>
+    <h6>Calls are free for the first 60 minutes, thereafter standard call rates may apply</h6>
+</section>
+<section id="quiz">
+    <img style="width:42px;height:100%%;" src="https://media.istockphoto.com/vectors/quiz-logo-with-question-marks-sign-in-comic-pop-art-style-vector-vector-id1198277097?k=6&m=1198277097&s=612x612&w=0&h=88YcX6Bm6IQ-C90RB2_FhEMG2AXUdfnVuZSQy1HdEtI=" />
+    <h3 class="quiz">Need to take a quiz to figure out your sexuality? Try this</h3>
+    <button onclick="Quiz()">Take the quiz</button>
+    <h6>
+        The quiz results are not a sure confimrmation of your identity. It merely serves as a way to gain confidence
+        and own your sexulaity
+    </h6>
+</section>
+
+<!--functions-->
+<script>
+    function Text() {
+        alert('Our representative will get back to you in a few');
+    }
+    function Call() {
+        alert("Dialling...");
+    }
+    function Quiz() {
+        location.href: ' https://www.bing.com/ck/a?!&&p=546f9bc470161fddJmltdHM9MTY2MDg2MTkwMCZpZ3VpZD03MjkzYjExYi00ZjVkLTQ4NGUtYTg1Ni1kMGJhNWRmYmNjZGImaW5zaWQ9NTE5Mg&ptn=3&hsh=3&fclid=878029af-1f45-11ed-b63c-85bd1de98038&u=a1aHR0cHM6Ly9xdWl6YXphLmNvbS9zZXh1YWxpdHktcXVpei8&ntb=1 ';
+    }
+</script>
+
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script src="~/js/site.js" asp-append-version="true"></script>

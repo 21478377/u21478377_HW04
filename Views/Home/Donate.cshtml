@@ -1,0 +1,114 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+
+<style>
+    .grid-container {
+        display: grid;
+        grid-template-columns: auto auto auto;
+        padding: 10px;
+    }
+
+    .grid-item {
+        border: 1px solid rgba(0, 0, 0, 0.8);
+        padding: 20px;
+        font-size: 30px;
+        text-align: center;
+    }
+
+    .header {
+        text-align: center;
+    }
+
+    .head {
+        text-align: center;
+    }
+
+    .join {
+        text-align: right;
+    }
+
+    #background {
+        background-size: 100%;
+        background-image: url("https://i.pinimg.com/736x/46/0e/89/460e89249119b5d1f56bc005cc3f32c1.jpg") /*rainbow background*/
+    }
+    .white{
+        color:white;
+    }
+</style>
+
+
+
+<h2 class="header">Donate to help make quality education accessible for LGBTQ+ persons</h2>
+<br />
+<h3 class="head">Together, we can ensure that discrimination does not hinder the talents and passions of the many young people in the world.</h3>
+<br />
+<h3 class="head">Our mission is to help as many as we can-</h3>
+<br />
+<h3 class="join"><i>Will you join us?</i></h3>
+<br />
+<br />
+
+<h4>Your support will help:</h4>
+<br />
+<ul>
+    <li>Provide transport and accomodation for interviews</li>
+    <li>Sponsor formal wear for interviews</li>
+    <li>Train new volunteers</li>
+    <li>Expand our digital outreach and advertisement</li>
+    <li>Continue to provide free 24/7 crisis lifelines.</li>
+</ul>
+<br />
+
+<section>
+    <h2>Payment</h2>
+    <div class="grid-container" id="background">
+        <div class="grid-item">
+            <input type="button" name="Pay via GooglePay" placeholder="Pay via Google Pay" value="Pay via Google Pay" href="https://pay.google.com/about/" /><br />
+            <br /><input type="button" name="Pay via PayPal" placeholder="Pay viaPayPal" value="Pay via PayPal" href="https://www.paypal.com/za/home" /><br />
+            <br /><h2 class="center"><i><b>OR</b></i></h2><br />
+            <input type="number" name="Card number" maxlength="13" placeholder="Card number" id="cardnumber" /><br />
+            <input type="number" name="MM/YY" maxlength="4" placeholder="MMYY" id="datecard" />
+            <input type="number" name="CVV" maxlength="3" placeholder="CVV" id="cvv" /><br /><br />
+            <input type="button" name="Pay with card" value="Pay with card" onclick="Card()" />
+        </div>
+        <div class="grid-item">
+            <table>
+                <tr>
+                    <th class="white">R</th>
+                    <th><input type="number" name="amount" placeholder="Amount" id="amount" /></th>
+                </tr>
+            </table>
+            <input type="checkbox" value="Dedicate" class="white"/><h4>Dedicate my donation</h4><br />
+            <h4 class="white">Email address OR Cellphone number</h4>
+            <input type="text" /><br />
+            <h4 class="white">Comments</h4>
+            <input type="text" name="comments" placeholder="Great service and platform!" maxlength="500" /><br />
+        </div>
+    </div>
+</section>
+
+<!--javascript-->
+<script>
+    function Card() { //card details filled
+        var cardnumber = document.getElementById("cardnumber");
+        var datecard = document.getElementById("datecard");
+        var cvv = document.getElementById("cvv");
+        amount = Convert.ToInt32(document.getElementById("amount"));
+
+        if (cardnumber == null || datecard == null || cvv == null || amount == null) { //if empty
+            alert("All the information must be filled!")
+        } else if (cardnumber !== null || datecard !== null || cvv !== null || amount > 1) { //filled in
+            alert("Payment successful")
+            //generate
+        }
+
+    }
+
+</script>
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script src="~/js/site.js" asp-append-version="true"></script>
