@@ -89,7 +89,9 @@
     <!--display narratives and structure diagram-->
     @foreach(var file in ViewBag.reqs)
     {
-   //add code back here
+    <div class="item">
+        <img src="~/Media/Required/@Path.GetFileName(file) " style="width:100%;">
+    </div>
     }
 </section>
 

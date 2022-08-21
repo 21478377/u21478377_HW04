@@ -22,9 +22,61 @@ namespace u21478377_H.W04.Controllers
             _logger = logger;
         }
         [HttpGet]
+        public IActionResult Index()
+        {
+            //code to display narratives in view
+            //get server first and get files from server path
+            string path = Server("~/Media/Required/");
+            string[] req = Directory.GetFiles(path);
+            ViewBag.reqs = req;
 
-        //add code back here
-        
+            return View();
+        }
+        //views for narratives
+        public IActionResult GetHelp()
+        {
+            return View();
+        }
+
+        public IActionResult Resources()
+        {
+            return View();
+        }
+        public IActionResult Donate()
+        {
+            return View();
+    }
+
+    public IActionResult Apply()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult Index(HttpPostedFileBase file, FormCollection frm)
+        {
+            
+                    if (file != null && file.ContentLength > 0)
+                    {
+                        var fileName = Path.GetFileName(file.FileName);
+                        var path = Path.Combine(Server.MapPath("~/Media/Documents"), fileName);
+                        file.SaveAs(path);
+                    }
+             
+            return RedirectToAction("Index");
+        }
+
+        public ActionResult DeleteFile(string fileName)
+        {
+            string path = Server.MapPath("~/Media/Documents/") + fileName;
+            byte[] bytes = System.IO.File.ReadAllBytes(path);
+
+
+            System.IO.File.Delete(path);
+
+            return RedirectToAction("Apply");
+        }
+
         public IActionResult Privacy()
         {
             return View();

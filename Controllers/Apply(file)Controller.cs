@@ -14,14 +14,14 @@ namespace u21478377_H.W04.Controllers
         public IActionResult Index()
         {
             //add code back here
-            return View();
+            return RedirectToAction("Apply");
         }
 
         //if want to delete file and reupload
         public ActionResult DeleteFile(string fileName)
         {
             //add code back here
-            return View();
+            return RedirectToAction("Apply");
         }
         //polymorphism
         //inherited classes 
