@@ -26,9 +26,10 @@ namespace u21478377_H.W04.Controllers
         {
             //code to display narratives in view
             //get server first and get files from server path
-            string path = Server("~/Media/Required/");
+            string path = Server.MapPath("~/Media/Required/");
             string[] req = Directory.GetFiles(path);
             ViewBag.reqs = req;
+
 
             return View();
         }
@@ -45,24 +46,36 @@ namespace u21478377_H.W04.Controllers
         public IActionResult Donate()
         {
             return View();
-    }
+        }
 
-    public IActionResult Apply()
+        public IActionResult Apply()
         {
             return View();
         }
 
+        //aadd code back here
         [HttpPost]
         public ActionResult Index(HttpPostedFileBase file, FormCollection frm)
         {
-            
-                    if (file != null && file.ContentLength > 0)
-                    {
-                        var fileName = Path.GetFileName(file.FileName);
-                        var path = Path.Combine(Server.MapPath("~/Media/Documents"), fileName);
-                        file.SaveAs(path);
-                    }
-             
+
+            //null checks
+            if (file is null)
+            {
+                throw new ArgumentNullException(nameof(file));
+            }
+
+            if (frm is null)
+            {
+                throw new ArgumentNullException(nameof(frm));
+            }
+
+            if (file != null && file.ContentLength > 0)
+            {
+                var fileName = Path.GetFileName(file.FileName);
+                var path = Path.Combine(Server.MapPath("~/Media/Documents"), fileName);
+                file.SaveAs(path);
+            }
+
             return RedirectToAction("Index");
         }
 
@@ -89,4 +102,19 @@ namespace u21478377_H.W04.Controllers
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
     }
+
+    public class HttpPostedFileBase
+    {
+
+        public int ContentLength { get; internal set; }
+        public ReadOnlySpan<char> FileName { get => fileName; internal set => fileName = value; }
+        public ReadOnlySpan<char> fileName { get; private set; }
+
+        internal void SaveAs(string path)
+        {
+            throw new NotImplementedException();
+        }
+    }
+
+}
 }

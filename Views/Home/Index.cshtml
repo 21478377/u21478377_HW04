@@ -17,7 +17,7 @@
     <div class="container">
         <div id="welcome">
             <h2>
-                Welcome to <i>KISMET</i><br /> It has been written in the stars that you would find us, we are happy
+                Welcome to <i>KISMET</i><br /> <br />It has been written in the stars that you would find us, we are happy
                 to have you here <br /> Come join our family, come find peace in our home.
             </h2>
         </div>
@@ -55,20 +55,21 @@
                 <div class="item">
                     <img src="https://archive.sltrib.com/images/2017/0623/wn_PrideandPrejudice_062417~1.jpg" style="width:100%;">
                 </div>
-                <div class="item"> <!--images also uploaded online (narratives and structure diagram-->
-                    <img src="https://ibb.co/2hP4gkm" style="width:100%;">
+                <div class="item">
+                    <!--images also uploaded online (narratives and structure diagram-->
+                    <img src="https://pixshare.org/images/6dTez3.jpg" alt="6dTez3.jpg" border="0">
                 </div>
                 <div class="item">
-                    <img src="https://ibb.co/n686BNR " style="width:100%;">
+                    <img src="https://pixshare.org/images/6dTCdJ.jpg" alt="6dTCdJ.jpg" border="0" />
                 </div>
                 <div class="item">
-                    <img src="https://ibb.co/G9pyPpP " style="width:100%;">
+                    <img src="https://pixshare.org/images/6dTQaW.jpg" alt="6dTQaW.jpg">
                 </div>
                 <div class="item">
-                    <img src="https://ibb.co/bvrC1QZ" style="width:100%;">
+                    <img src="https://pixshare.org/images/6dTXGF.jpg" alt="6dTXGF.jpg" style="width:100%;">
                 </div>
                 <div class="item">
-                    <img src="https://ibb.co/WWvjqBx" style="width:100%;">
+                    <img src="https://pixshare.org/images/6dTD4a.jpg" alt="6dTD4a.jpg" style="width:100%;">
                 </div>
             </div>
 
@@ -87,12 +88,10 @@
 </section>
 <section id="body">
     <!--display narratives and structure diagram-->
-    @foreach(var file in ViewBag.reqs)
-    {
     <div class="item">
         <img src="~/Media/Required/@Path.GetFileName(file) " style="width:100%;">
     </div>
-    }
+
 </section>
 
 

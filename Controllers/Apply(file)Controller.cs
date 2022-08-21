@@ -14,6 +14,18 @@ namespace u21478377_H.W04.Controllers
         public IActionResult Index()
         {
             //add code back here
+            string[] filePaths = System.IO.Directory.GetFiles(Server.MapPath("~/Media/Documents/"));
+            List<Models.KISMET> files = new List<KISMET>();
+            foreach (string filePath in filePaths)
+            {
+                files.Add(new KISMET
+                {
+                    FileName = Path.GetFileName(filePath)
+                });
+            }
+            return View(files);
+            return RedirectToAction("Apply");
+
             return RedirectToAction("Apply");
         }
 
@@ -21,7 +33,14 @@ namespace u21478377_H.W04.Controllers
         public ActionResult DeleteFile(string fileName)
         {
             //add code back here
+            string path = Server.MapPath("~/Media/Documents/") + fileName;
+            byte[] bytes = System.IO.File.ReadAllBytes(path);
+
+
+            System.IO.File.Delete(path);
+
             return RedirectToAction("Apply");
+
         }
         //polymorphism
         //inherited classes 
@@ -60,7 +79,51 @@ namespace u21478377_H.W04.Controllers
             }
         }
 
+        //save details 
+        //OOP 
+        //poly
+        //public details
 
+        class Person
+        {
+            private string cname = "";
+            public string firstName { get { return cname; } }
+
+            private string csurname = "";
+            public string Surname { get { return csurname; } }
+
+            private int cnumber =Convert.ToInt32( "");
+            public int Cell { get { return cnumber; } }
+
+            private string cemail = "";
+            public string Email { get { return cemail; } }
+
+            public int cadd { get; set; }
+
+            public int add
+            {
+                get
+                {
+                    return cadd;
+                }
+                set
+                {
+                    cadd = value;
+                }
+            }
+            //constructor
+            /// <summary>
+            /// (   Reminder: 3 // signs to include below parameter reminders
+            public Person(string firstName, string Surname)
+            {
+
+                /// <param name="firstName">name</param>
+                /// <param name="Surname">surname</param>
+                cname = firstName;
+                csurname = Surname;
+            }
+            
+        }
 
     }
 }
